@@ -1,0 +1,103 @@
+@baseUrl = http://localhost:3000
+
+### API status
+GET {{baseUrl}}/
+
+### Create first product - keep this response for the generated ID
+# @name createProduct
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Wireless Keyboard",
+  "category": "Accessories",
+  "price": 1850,
+  "quantity": 24
+}
+
+### Create a second product
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "USB-C Hub",
+  "category": "Accessories",
+  "price": 2450,
+  "quantity": 18
+}
+
+### Get all products
+GET {{baseUrl}}/products
+
+### Get the actual product created above
+GET {{baseUrl}}/products/{{createProduct.response.body.$.id}}
+
+### Update the product
+PATCH {{baseUrl}}/products/{{createProduct.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "price": 1750,
+  "quantity": 20
+}
+
+### Confirm the update
+GET {{baseUrl}}/products/{{createProduct.response.body.$.id}}
+
+### Delete the product
+DELETE {{baseUrl}}/products/{{createProduct.response.body.$.id}}
+
+### Confirm deletion
+GET {{baseUrl}}/products
+
+### Create an employee (change email if you rerun manually)
+# @name createEmployee
+POST {{baseUrl}}/employees
+Content-Type: application/json
+
+{
+  "name": "Nadia Ahmed",
+  "email": "nadia@example.com",
+  "phone": "+8801611122233",
+  "password": "Sample5678!",
+  "age": 27,
+  "yearsOfWorking": 4
+}
+
+### Get all employees
+GET {{baseUrl}}/employees
+
+### Get the employee created above
+GET {{baseUrl}}/employees/{{createEmployee.response.body.$.id}}
+
+### Update an employee
+PATCH {{baseUrl}}/employees/{{createEmployee.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "phone": "+8801911122255",
+  "yearsOfWorking": 5
+}
+
+### Confirm the update
+GET {{baseUrl}}/employees/{{createEmployee.response.body.$.id}}
+
+### Delete an employee
+DELETE {{baseUrl}}/employees/{{createEmployee.response.body.$.id}}
+
+### Confirm deletion
+GET {{baseUrl}}/employees
+
+### Expected 404 for a missing product
+GET {{baseUrl}}/products/2147483647
+
+### Expected 400 for invalid input
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+  "name": "Invalid product",
+  "category": "Accessories",
+  "price": -10,
+  "quantity": 1.5
+}

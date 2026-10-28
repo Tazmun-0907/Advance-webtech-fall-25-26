@@ -1,0 +1,283 @@
+{
+  "source": "Fresh actual Postman requests - Version 2",
+  "records": [
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/products",
+      "requestBody": {
+        "name": "Wireless Keyboard",
+        "category": "Accessories",
+        "price": 1850,
+        "quantity": 24
+      },
+      "status": 201,
+      "responseBody": {
+        "id": 1,
+        "name": "Wireless Keyboard",
+        "category": "Accessories",
+        "price": 1850,
+        "quantity": 24
+      },
+      "screenshot": "01-create.png"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/products",
+      "requestBody": {
+        "name": "USB-C Hub",
+        "category": "Accessories",
+        "price": 2450,
+        "quantity": 18
+      },
+      "status": 201,
+      "responseBody": {
+        "id": 2,
+        "name": "USB-C Hub",
+        "category": "Accessories",
+        "price": 2450,
+        "quantity": 18
+      },
+      "screenshot": null
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/products",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": [
+        {
+          "id": 1,
+          "name": "Wireless Keyboard",
+          "category": "Accessories",
+          "price": 1850,
+          "quantity": 24
+        },
+        {
+          "id": 2,
+          "name": "USB-C Hub",
+          "category": "Accessories",
+          "price": 2450,
+          "quantity": 18
+        }
+      ],
+      "screenshot": "02-get-all.png"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/products/1",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": {
+        "id": 1,
+        "name": "Wireless Keyboard",
+        "category": "Accessories",
+        "price": 1850,
+        "quantity": 24
+      },
+      "screenshot": "03-get-by-id.png"
+    },
+    {
+      "method": "PATCH",
+      "url": "http://localhost:3000/products/1",
+      "requestBody": {
+        "price": 1750,
+        "quantity": 20
+      },
+      "status": 200,
+      "responseBody": {
+        "id": 1,
+        "name": "Wireless Keyboard",
+        "category": "Accessories",
+        "price": 1750,
+        "quantity": 20
+      },
+      "screenshot": "04-update.png"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/products/1",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": {
+        "id": 1,
+        "name": "Wireless Keyboard",
+        "category": "Accessories",
+        "price": 1750,
+        "quantity": 20
+      },
+      "screenshot": "05-confirm-update.png"
+    },
+    {
+      "method": "DELETE",
+      "url": "http://localhost:3000/products/1",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": {
+        "message": "Product deleted successfully.",
+        "id": 1
+      },
+      "screenshot": "06-delete.png"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/products",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": [
+        {
+          "id": 2,
+          "name": "USB-C Hub",
+          "category": "Accessories",
+          "price": 2450,
+          "quantity": 18
+        }
+      ],
+      "screenshot": "07-confirm-delete.png"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/employees",
+      "requestBody": {
+        "name": "Nadia Ahmed",
+        "email": "nadia@example.com",
+        "phone": "+8801611122233",
+        "password": "Sample5678!",
+        "age": 27,
+        "yearsOfWorking": 4
+      },
+      "status": 201,
+      "responseBody": {
+        "id": 1,
+        "name": "Nadia Ahmed",
+        "email": "nadia@example.com",
+        "phone": "+8801611122233",
+        "age": 27,
+        "yearsOfWorking": 4
+      },
+      "screenshot": "employees/01-create.png"
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/employees",
+      "requestBody": {
+        "name": "Imran Hossain",
+        "email": "imran@example.com",
+        "phone": "+8801811122244",
+        "password": "Sample5678!",
+        "age": 30,
+        "yearsOfWorking": 6
+      },
+      "status": 201,
+      "responseBody": {
+        "id": 2,
+        "name": "Imran Hossain",
+        "email": "imran@example.com",
+        "phone": "+8801811122244",
+        "age": 30,
+        "yearsOfWorking": 6
+      },
+      "screenshot": null
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/employees",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": [
+        {
+          "id": 1,
+          "name": "Nadia Ahmed",
+          "email": "nadia@example.com",
+          "phone": "+8801611122233",
+          "age": 27,
+          "yearsOfWorking": 4
+        },
+        {
+          "id": 2,
+          "name": "Imran Hossain",
+          "email": "imran@example.com",
+          "phone": "+8801811122244",
+          "age": 30,
+          "yearsOfWorking": 6
+        }
+      ],
+      "screenshot": "employees/02-get-all.png"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/employees/1",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": {
+        "id": 1,
+        "name": "Nadia Ahmed",
+        "email": "nadia@example.com",
+        "phone": "+8801611122233",
+        "age": 27,
+        "yearsOfWorking": 4
+      },
+      "screenshot": "employees/03-get-by-id.png"
+    },
+    {
+      "method": "PATCH",
+      "url": "http://localhost:3000/employees/1",
+      "requestBody": {
+        "phone": "+8801911122255",
+        "yearsOfWorking": 5
+      },
+      "status": 200,
+      "responseBody": {
+        "id": 1,
+        "name": "Nadia Ahmed",
+        "email": "nadia@example.com",
+        "phone": "+8801911122255",
+        "age": 27,
+        "yearsOfWorking": 5
+      },
+      "screenshot": "employees/04-update.png"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/employees/1",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": {
+        "id": 1,
+        "name": "Nadia Ahmed",
+        "email": "nadia@example.com",
+        "phone": "+8801911122255",
+        "age": 27,
+        "yearsOfWorking": 5
+      },
+      "screenshot": "employees/05-confirm-update.png"
+    },
+    {
+      "method": "DELETE",
+      "url": "http://localhost:3000/employees/1",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": {
+        "message": "Employee deleted successfully.",
+        "id": 1
+      },
+      "screenshot": "employees/06-delete.png"
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/employees",
+      "requestBody": null,
+      "status": 200,
+      "responseBody": [
+        {
+          "id": 2,
+          "name": "Imran Hossain",
+          "email": "imran@example.com",
+          "phone": "+8801811122244",
+          "age": 30,
+          "yearsOfWorking": 6
+        }
+      ],
+      "screenshot": "employees/07-confirm-delete.png"
+    }
+  ]
+}
